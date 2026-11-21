@@ -19,12 +19,11 @@
         <span>QasStudy<span>AI</span></span>
       </a>
       <nav class="desktop-nav" aria-label="Негізгі мәзір">
-        <a class="active" href="#">Басты бет</a>
+        <a class="active" href="#">Студентке</a>
         <a href="#subjects">Пәндер</a>
-        <a href="#features">Мүмкіндіктер</a>
-        <a href="#progress">Прогресс</a>
-        <a href="#smart-summary">Smart Summary</a>
-        <a href="#ai-quiz">AI Quiz & Tutor</a>
+        <a href="#ai-quiz">Оқу көмекшісі</a>
+        <a href="#ai-lab">AI зертханасы</a>
+        <a href="#pilot-kpi">Пилот туралы</a>
       </nav>
       <div class="nav-actions">
         <button class="icon-button" id="themeBtn" type="button" aria-label="Тақырыпты өзгерту">☀</button>
@@ -203,6 +202,75 @@
               <button class="test-submit" id="checkQuizBtn" type="button" disabled>Нәтиже тексеру</button>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="lab-section" id="ai-lab">
+      <div class="shell">
+        <div class="section-heading">
+          <div><span class="kicker">СТУДЕНТТІК ИННОВАЦИЯ</span><h2>Қолданбалы AI зертханасы</h2></div>
+        </div>
+        <div class="lab-grid">
+          <article class="lab-info">
+            <span class="lab-icon">AI</span>
+            <h3>Жоба идеяңыз бен прототипіңізді ұсынуға дайындалған орталық</h3>
+            <p>Қолданбалы AI мәселесін, шешу гипотезасын және қолжетімді дереккөзді жүйелі түрде сипаттаңыз.</p>
+            <ul>
+              <li>Зерттеу мақсаты мен академиялық мәселе</li>
+              <li>Прототип демонстрациясы немесе макет</li>
+              <li>Дереккөз, қауіпсіздік және этика ережелері</li>
+            </ul>
+          </article>
+          <form class="lab-form" id="labForm">
+            <label>Жоба атауы
+              <input name="title" type="text" placeholder="Мысалы: Дәріс конспектін талдаушы" required>
+            </label>
+            <label>Қандай мәселені шешеді?
+              <textarea name="problem" placeholder="Аудитория, проблема және ұсынылған шешім" required></textarea>
+            </label>
+            <div class="lab-row">
+              <label>Бағыт
+                <select name="category">
+                  <option>Білім беру</option>
+                  <option>Экономика</option>
+                  <option>Инженерия</option>
+                  <option>Деректер ғылымы</option>
+                  <option>Қоғамдық қолданба</option>
+                </select>
+              </label>
+              <label>Дереккөз
+                <select name="source">
+                  <option>Рұқсат берілген дерекқор</option>
+                  <option>Ашық дереккөз</option>
+                  <option>Жеке деректер жоқ</option>
+                  <option>Пайдалы дерекқор әзірленуде</option>
+                </select>
+              </label>
+            </div>
+            <label>Жариялау келісімі
+              <span class="lab-consent"><input name="consent" type="checkbox" required> Жеке деректер қосылмағанын және пікір мен ақпаратының тек зерттеу мақсатында пайдаланылатынын растаймын.</span>
+            </label>
+            <button class="primary-button lab-submit" type="submit">Идеяны зертханаға жіберу</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="pilot-section" id="pilot-kpi">
+      <div class="shell">
+        <div class="section-heading">
+          <div><span class="kicker">ПИЛОТТЫ БАҒАЛАУ</span><h2>Нәтижелер мен қауіпсіздік KPI</h2></div>
+        </div>
+        <div class="kpi-grid">
+          <article><span id="kpiUsers">0</span><b>Белсенді білім алушы</b><small>Пилотқа қатысқан есептік жазбалар</small></article>
+          <article><span id="kpiTests">0</span><b>Өткізілген тест</b><small>Сақталған тест нәтижелері</small></article>
+          <article><span id="kpiAverage">0%</span><b>Орташа нәтиже</b><small>Барлық тесттер бойынша</small></article>
+          <article><span id="kpiTime">—</span><b>Жауап уақыты</b><small>Жүксіз сұрақтан жауапқа дейін</small></article>
+        </div>
+        <div class="safety-note">
+          <b>Дереккөз және қауіпсіздік</b>
+          <p>AI жауаптары ұсынылып жатқан пәндік дереккөздерге негізделеді. Жеке тұлғаны тани алатын деректер енгізілмейді. Жауаптар эмпирикалық тестпен тексеріліп, академиялық шешімдердің жалғыз қайнар көзі ретінде пайдаланылмайды.</p>
         </div>
       </div>
     </section>

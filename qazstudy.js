@@ -370,12 +370,61 @@ window.askAI = function (query) {
   setTimeout(() => {
     typing.remove();
     appendChatMessage(createAIResponse(query), "bot");
+    appendChatMessage("Дереккөз: жүйедегі университеттік оқу модулі · Жауапты тексеру қажет", "source-tag");
   }, 550);
 };
 
 document.querySelectorAll("#aiSuggestions button").forEach((button) => {
   button.addEventListener("click", () => window.askAI(button.dataset.prompt));
 });
+
+document.querySelector("#labForm")?.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const form = new FormData(event.currentTarget);
+  const project = {
+    title: String(form.get("title") || "").trim(),
+    problem: String(form.get("problem") || "").trim(),
+    category: String(form.get("category") || ""),
+    source: String(form.get("source") || ""),
+    consent: form.get("consent") === "on",
+    createdAt: new Date().toISOString()
+  };
+  const projects = JSON.parse(localStorage.getItem("qas_lab_projects") || "[]");
+  projects.unshift(project);
+  localStorage.setItem("qas_lab_projects", JSON.stringify(projects.slice(0, 50)));
+  event.currentTarget.reset();
+  showToast("Идеяңыз AI зертханасына сақталды");
+});
+
+function updatePilotKpi() {
+  let users = 0;
+  let tests = 0;
+  let average = 0;
+  try {
+    const githubUsers = JSON.parse(localStorage.getItem("qas_github_users") || "{}");
+    const localUsers = JSON.parse(localStorage.getItem("qas_users") || "{}");
+    const allUsers = new Set([...Object.keys(githubUsers), ...Object.keys(localUsers)]);
+    users = allUsers.size;
+    const values = [];
+    Object.values(githubUsers).forEach((user) => {
+      (user.results || []).forEach((result) => values.push(Number(result.percent) || 0));
+    });
+    Object.keys(localUsers).forEach((email) => {
+      try {
+        const stored = JSON.parse(localStorage.getItem(`qas_results_${email}`) || "[]");
+        stored.forEach((result) => values.push(Number(result.percent) || 0));
+      } catch (_) {}
+    });
+    tests = values.length;
+    average = tests ? Math.round(values.reduce((sum, value) => sum + value, 0) / tests) : 0;
+  } catch (_) {}
+  document.querySelector("#kpiUsers").textContent = String(users);
+  document.querySelector("#kpiTests").textContent = String(tests);
+  document.querySelector("#kpiAverage").textContent = `${average}%`;
+  document.querySelector("#kpiTime").textContent = localStorage.getItem("qas_pilot_response_time") || "—";
+}
+
+updatePilotKpi();
 
 const authModal = document.querySelector("#authModal");
 const authForm = document.querySelector("#authForm");
