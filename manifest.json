@@ -1,0 +1,17 @@
+{
+  "name": "QasStudyAI — Сессияға дайындау платформасы",
+  "short_name": "QasStudyAI",
+  "description": "Жоғары оқу орнындағы студенттерді сессияға және емтихандарға AI көмегімен дайындайтын платформа.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0f1248",
+  "theme_color": "#14176b",
+  "lang": "kk",
+  "icons": [
+    {
+      "src": "https://static.tildacdn.pro/tild6564-6133-4437-b836-643837633137/web-app-manifest-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

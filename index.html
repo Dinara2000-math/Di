@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#5b45f5">
+  <meta name="description" content="QasStudyAI — студенттерді сессияға және емтихандарға AI көмегімен дайындайтын зияткерлік платформа.">
+  <title>QasStudyAI — Сессияға ақылды дайындал</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='18' fill='%235b45f5'/><text x='32' y='43' text-anchor='middle' font-size='38' fill='white'>Q</text></svg>">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="qazstudy.css">
+  <link rel="stylesheet" href="ai-chat.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell nav">
+      <a class="brand" href="#" aria-label="QasStudyAI басты бет">
+        <span class="brand-mark">Q</span>
+        <span>QasStudy<span>AI</span></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Негізгі мәзір">
+        <a class="active" href="#">Басты бет</a>
+        <a href="#subjects">Пәндер</a>
+        <a href="#features">Мүмкіндіктер</a>
+        <a href="#progress">Прогресс</a>
+        <a href="#smart-summary">Smart Summary</a>
+        <a href="#ai-quiz">AI Quiz & Tutor</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-button" id="themeBtn" type="button" aria-label="Тақырыпты өзгерту">☀</button>
+        <button class="login-button" id="loginBtn" type="button">Кіру</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span>●</span> AI-тренер қазір онлайн</div>
+          <h1>ЖОО сессиясына <span>AI-пен</span><br>сенімді дайындал</h1>
+          <p>Университет курстары, емтихан сұрақтары және жеке оқу жоспары — студентке арналған бір платформада.</p>
+          <div class="hero-actions">
+            <button class="primary-button" id="startBtn" type="button">Тегін бастау <b>→</b></button>
+            <button class="demo-button" id="demoBtn" type="button"><span>▶</span> Демо қарау</button>
+          </div>
+          <div class="social-proof">
+            <div class="avatars" aria-hidden="true">
+              <span>А</span><span>М</span><span>Д</span><span>С</span>
+            </div>
+            <div>            <b>12,000+</b><small>студент платформаны қолдануда</small></div>
+          </div>
+        </div>
+
+        <div class="hero-demo">
+          <div class="glow glow-one"></div>
+          <div class="glow glow-two"></div>
+          <article class="ai-card">
+            <div class="ai-card-head">
+              <div class="bot-avatar">✦</div>
+              <div>              <b>QasStudy AI</b><small><i></i> Желіде</small></div>
+              <button type="button" aria-label="Тағы">•••</button>
+            </div>
+            <div class="chat-area">
+              <div class="question-chip">Бағдарламалау · Көмек сұрау</div>
+              <p class="user-message">Python тізімінде append() әдісі нені істейді?</p>
+              <div class="bot-message">
+                <div class="bot-mini">✦</div>
+                <div>
+                  <b>Жауапты бірге қарастырайық</b>
+                  <p><strong>append()</strong> тізімнің соңына бір элемент қосады:</p>
+                  <div class="steps">
+                    <span>n = [1, 2] <b>бастапқы</b></span>
+                    <span>n.append(3) <b>қосу</b></span>
+                    <span>Нәтиже: [1, 2, 3] <b>✓</b></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="answer-bar"><span>Жауабыңызды енгізіңіз…</span><button type="button" aria-label="Жіберу">➤</button></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="subjects" id="subjects">
+      <div class="shell">
+        <div class="section-heading">
+          <div><span class="kicker">УНИВЕРСИТЕТ КУРСТАРЫ</span><h2>Қай пәннен сессияға дайындаласың?</h2></div>
+          <a href="#subjects">Барлық пәндер <b>→</b></a>
+        </div>
+        <div class="subject-grid">
+          <article class="subject-card" data-subject="Жоғары математика"><div class="subject-icon math">∑</div><div><h3>Жоғары математика</h3><p>1100+ тест және есеп</p></div><span>→</span></article>
+          <article class="subject-card" data-subject="Бағдарламалау"><div class="subject-icon physics">&lt;/&gt;</div><div><h3>Бағдарламалау</h3><p>700+ практикалық тапсырма</p></div><span>→</span></article>
+          <article class="subject-card" data-subject="Экономика"><div class="subject-icon kazakh">₸</div><div><h3>Экономика</h3><p>850+ теориялық сұрақ</p></div><span>→</span></article>
+          <article class="subject-card" data-subject="Физика"><div class="subject-icon history">⚛</div><div><h3>Физика</h3><p>900+ тест және есеп</p></div><span>→</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="features">
+      <div class="shell">
+        <div class="section-heading centered">
+          <div><span class="kicker">НЕЛІКТЕН БІЗ?</span><h2>Сәтті нәтиженің жаңа формуласы</h2></div>
+        </div>
+        <div class="feature-grid">
+          <article><div class="feature-icon">✦</div><h3>AI-пен жеке көмек</h3><p>Күрделі тақырыпты жеңіл тілмен түсіндіреміз және қадам сайын бағыт береміз.</p></article>
+          <article><div class="feature-icon">▦</div><h3>Жеке оқу жоспары</h3><p>Сессия күніне және бос уақытына қарап нақты дайындық жоспарын құрамыз.</p></article>
+          <article><div class="feature-icon">↗</div><h3>Білім прогресі</h3><p>Күшті және әлсіз тақырыптарыңызды мониторингпен нақты бақылайсыз.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="progress" id="progress">
+      <div class="shell progress-grid">
+        <article class="progress-card">
+          <div class="progress-top">
+            <div><span class="kicker" id="todayLabel">БҮГІНГІ ЖОСПАР</span><h2 id="progressTitle">Оқу жетістігі</h2></div>
+            <b id="studyStreak">0 күн</b>
+          </div>
+          <div class="week" id="studyWeek"></div>
+          <div class="progress-bar"><span></span></div>
+          <div class="progress-meta"><span>Апталық мақсат</span><b>68%</b></div>
+        </article>
+        <article class="tasks-card">
+          <span class="kicker">СЕССИЯҒА ДАЙЫНДЫҚ</span>
+          <h2>Бүгінгі тапсырмалар</h2>
+          <label><input type="checkbox" checked><span><b>Дәріс конспектісін қайталау</b><small>20 минут</small></span></label>
+          <label><input type="checkbox"><span><b>30 тест сұрағын шешу</b><small>35 минут</small></span></label>
+          <label><input type="checkbox"><span><b>AI-пен бір тақырыпты талдау</b><small>15 минут</small></span></label>
+        </article>
+      </div>
+    </section>
+
+    <section class="summary-section" id="smart-summary">
+      <div class="shell">
+        <div class="section-heading">
+          <div><span class="kicker">AI PDF ҚҰРАЛЫ</span><h2>Smart Summary</h2></div>
+        </div>
+        <div class="summary-grid">
+          <article class="summary-upload">
+            <div class="summary-icon">PDF</div>
+            <h3>Құжатты қысқаша тезистерге айналдыру</h3>
+            <p>Дәріс конспектісін немесе PDF оқулығын жүктеп, негізгі идеяларды автоматты түрде алу.</p>
+            <label class="pdf-drop" id="pdfDrop">
+              <input id="pdfInput" type="file" accept=".pdf,application/pdf">
+              <span class="pdf-drop-icon">＋</span>
+              <b id="pdfFileName">PDF файлын таңдаңыз</b>
+              <small>PDF · 20 МБ дейін</small>
+            </label>
+            <button class="primary-button summary-button" id="summarizeBtn" type="button" disabled>Негізгі тезистерді шығару</button>
+            <textarea class="summary-fallback" id="summaryTextFallback" placeholder="PDF сканерленген болса, мәтінін осы жерге қойып тезистер ала аласыз…"></textarea>
+          </article>
+          <article class="summary-output">
+            <div class="summary-output-head">
+              <div><span class="kicker">ҚЫСҚАРТЫЛҒАН НҰСҚА</span><h3>Негізгі тезистер</h3></div>
+              <button id="copySummary" type="button" disabled>Көшіру</button>
+            </div>
+            <div class="summary-status" id="summaryStatus">
+              <span>Документ қосылғаннан кейін негізгі идеялар осы жерде пайда болады.</span>
+            </div>
+            <ol class="summary-theses" id="summaryTheses"></ol>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="ai-quiz-section" id="ai-quiz">
+      <div class="shell">
+        <div class="section-heading">
+          <div><span class="kicker">КОНСПЕКТ Негізінде</span><h2>AI Quiz & Tutor</h2></div>
+        </div>
+        <div class="quiz-grid">
+          <article class="quiz-builder">
+            <h3>Конспект не тезистер</h3>
+            <p>Текстті қойыңыз немесе Smart Summary нәтижесін пайдаланыңыз.</p>
+            <textarea id="quizSource" placeholder="Тақырыптың конспектісін немесе негізгі текстін осы жерге қойыңыз…"></textarea>
+            <div class="quiz-controls">
+              <label for="quizLevel">Деңгей</label>
+              <select id="quizLevel">
+                <option value="easy">1 — Оңай</option>
+                <option value="medium" selected>2 — Орташа</option>
+                <option value="hard">3 — Күрделі</option>
+              </select>
+              <label for="quizCount">Сұрақ саны</label>
+              <select id="quizCount">
+                <option value="5">5 сұрақ</option>
+                <option value="10" selected>10 сұрақ</option>
+              </select>
+            </div>
+            <button class="primary-button quiz-button" id="generateQuizBtn" type="button">Тест құрастыру</button>
+          </article>
+          <article class="quiz-workspace">
+            <div class="quiz-workspace-head">
+              <div><span class="kicker">АДАПТИВТІ ТЕСТ</span><h3 id="quizTitle">Тест әлі құрастырылмаған</h3></div>
+              <div class="quiz-score" id="quizScore">0%</div>
+            </div>
+            <div id="quizQuestions" class="quiz-questions">
+              <div class="quiz-empty">Деңгейді таңдап, конспект негізінде тест құрастырыңыз.</div>
+            </div>
+            <div class="quiz-actions">
+              <button class="quiz-secondary" id="useSummaryBtn" type="button">Smart Summary пайдалану</button>
+              <button class="test-submit" id="checkQuizBtn" type="button" disabled>Нәтиже тексеру</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="results" id="results">
+      <div class="shell results-card">
+        <div><span class="kicker">БҰЛ СІЗГЕ ОҚУҒА КӨМЕКТЕСЕ АЛАДЫ</span><h2>Сіздің мақсатқа жету жолы<br>басталады</h2></div>
+        <button class="primary-button" type="button" id="bottomStart">Тегін тіркелу <b>→</b></button>
+      </div>
+    </section>
+  </main>
+
+  <aside class="ai-drawer" id="aiDrawer" aria-label="AI-тренер чаты">
+    <div class="drawer-head">
+      <div class="bot-avatar">✦</div>
+      <div><b>QasStudy AI</b><small>● Желідегі көмекші</small></div>
+      <button class="drawer-close" id="drawerClose" type="button" aria-label="Жабу">×</button>
+    </div>
+    <div class="drawer-messages" id="drawerMessages">
+      <div class="drawer-message bot">Сәлем! Сессияда қиын болған тақырыпты жазыңыз — оны біртіндеп түсіндіремін.</div>
+      <div class="ai-suggestions" id="aiSuggestions">
+        <button type="button" data-prompt="Туынды дегеніміз не?">Туынды</button>
+        <button type="button" data-prompt="Python циклі қалай жұмыс істейді?">Python циклы</button>
+        <button type="button" data-prompt="Маған сұраныс және ұсыныс туралы тест құрастырыңыз">Экономика тесті</button>
+      </div>
+    </div>
+    <form class="drawer-input" id="chatForm">
+      <input id="chatInput" aria-label="Хабарлама" placeholder="Сұрағыңызды жазыңыз…" autocomplete="off">
+      <button type="submit" aria-label="Жіберу">➤</button>
+    </form>
+  </aside>
+
+  <div class="auth-modal" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+    <form class="auth-box" id="authForm">
+      <button class="auth-close" id="authClose" type="button" aria-label="Жабу">×</button>
+      <span class="kicker">QasStudyAI</span>
+      <h2 id="authTitle">Білім алушы кабинеті</h2>
+      <p id="authLead">Тіркеліп, оқу прогресіңіз бен тест нәтижелеріңізді сақтаңыз.</p>
+      <div class="auth-tabs">
+        <button type="button" class="active" data-auth-tab="login">Кіру</button>
+        <button type="button" data-auth-tab="register">Тіркелу</button>
+      </div>
+      <div class="auth-fields" id="registerFields" hidden>
+        <input type="text" name="fullName" placeholder="Аты-жөні">
+        <input type="text" name="university" placeholder="Жоғары оқу орны">
+        <input type="text" name="specialty" placeholder="Мамандық / мамандық бағыты">
+      </div>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="password" name="password" placeholder="Құпия сөз" minlength="6" required>
+      <button class="primary-button" id="authSubmit" type="submit">Кіру</button>
+      <div class="profile-summary" id="profileSummary" hidden></div>
+      <button class="logout-button" id="logoutBtn" type="button" hidden>Шығу</button>
+    </form>
+  </div>
+
+  <div class="study-modal" id="studyModal" role="dialog" aria-modal="true" aria-labelledby="studyTitle">
+    <div class="study-shell">
+      <header class="study-head">
+        <div>
+          <span class="kicker">ПӘН БАҒДАРЛАМАСЫ</span>
+          <h2 id="studyTitle">Пән</h2>
+        </div>
+        <button id="studyClose" type="button" aria-label="Жабу">×</button>
+      </header>
+      <div class="study-layout">
+        <aside class="topic-list" id="topicList"></aside>
+        <main class="study-content">
+          <div class="study-tabs">
+            <button class="active" type="button" data-tab="theory">Теория</button>
+            <button type="button" data-tab="test">Тест</button>
+          </div>
+          <section id="theoryPanel"></section>
+          <section id="testPanel" hidden></section>
+        </main>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="qazstudy.js"></script>
+</body>
+</html>
